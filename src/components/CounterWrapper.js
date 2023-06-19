@@ -1,5 +1,6 @@
 import { DecrementButton } from "./Buttons/DecrementButton";
 import { IncrementButton } from "./Buttons/IncrementButton";
+import { ResetButton } from "./Buttons/ResetButton";
 import { CounterValueDisplay } from "./CounterValueDisplay";
 import { IncrementByValue } from "./IncrementByValue";
 
@@ -17,6 +18,7 @@ export const CounterWrapper = () => {
       <CounterValueDisplay />
       <div>
         <DecrementButton />
+        <ResetButton />
         <IncrementButton />
       </div>
       <IncrementByValue />

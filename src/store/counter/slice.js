@@ -1,10 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const middlewareActions = {
+  performCounterReset: () => {},
+};
+
 export const counterSlice = createSlice({
   name: "counter",
   initialState: {
-    allCars: [{}, {}],
-    filteredCars: [{}],
+    value: 0,
   },
   reducers: {
     // actions
@@ -17,9 +20,19 @@ export const counterSlice = createSlice({
     incrementByAmount: (state, action) => {
       state.value += action.payload;
     },
+    reset: (state) => {
+      state.value = 0;
+    },
+    ...middlewareActions,
   },
 });
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+export const {
+  increment,
+  decrement,
+  incrementByAmount,
+  reset,
+  performCounterReset,
+} = counterSlice.actions;
 
 export default counterSlice.reducer; // reducer
